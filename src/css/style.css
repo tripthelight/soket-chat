@@ -37,7 +37,7 @@ ul, ol, li, dl, dt, dd {
 .display-container {
   flex: 12;
   background-color: #b2c7d9;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .input-container {

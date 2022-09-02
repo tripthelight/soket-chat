@@ -1,6 +1,7 @@
 1. npm install
 - npm install express socket.io moment
 - npm install -g nodemon
+- npm install -g ngrok(ngrok http 5000) -> not working
 
 2. vscode extension
 - Material theme
