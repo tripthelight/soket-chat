@@ -12,8 +12,7 @@ app.use(express.static(path.join(__dirname, 'src')));
 
 io.on('connection', (socket) => {
   socket.on('chatting', (data) => {
-    console.log(data);
-    io.emit('chatting', `반갑다 ${data}`);
+    io.emit('chatting', data);
   })
 });
 
