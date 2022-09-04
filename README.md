@@ -20,3 +20,4 @@
 
 4. gabia node js hosting
 - https://www.youtube.com/watch?v=gmR_dHGrlx8&ab_channel=%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%8F%84%EC%84%9C%EA%B4%80
+- https://www.youtube.com/watch?v=CLIfEM41fQs&ab_channel=%EC%9E%84%EB%8D%95%EA%B7%9C
