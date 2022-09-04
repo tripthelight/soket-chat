@@ -17,3 +17,6 @@
 3. YOUTUBE LINK
 - https://www.youtube.com/watch?v=UoKoPP91Qx0&ab_channel=%EB%8D%B0%EB%B8%8C%EB%A6%AC
 - 27:29
+
+4. gabia node js hosting
+- https://www.youtube.com/watch?v=gmR_dHGrlx8&ab_channel=%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4%EB%8F%84%EC%84%9C%EA%B4%80
