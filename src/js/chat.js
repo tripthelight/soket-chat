@@ -8,6 +8,10 @@ const chatInput = document.querySelector('#chatting-input');
 const sendButton = document.querySelector('.send-button');
 const displayContainer = document.querySelector('.display-container');
 
+window.addEventListener('DOMContentLoaded', function(event) {
+  loadLiCheck();
+});
+
 chatInput.addEventListener('keypress', function(event) {
   if (event.keyCode === 13) {
     send();
@@ -50,7 +54,7 @@ function Limodel(name, msg, time) {
   this.time = time;
 
   this.makeLi = function () {
-    liCheck();
+    loadLiCheck();
 
     const li = document.createElement('li');
     li.classList.add(nickname.value === this.name ? 'sent' : 'received');
@@ -68,11 +72,11 @@ function Limodel(name, msg, time) {
   }
 }
 
-function liCheck() {
-  let liElem = document.querySelectorAll('li');
+function loadLiCheck() {
+  let liElem = document.querySelectorAll('.chatting-list li');
   if (liElem.length > 100) {
-    for (let i = 0; i < liElem.length; i++) {
-      liElem[0].remove();
+    for (let i = 0; i < liElem.length-10; i++) {
+      liElem[i].parentNode.removeChild(liElem[i]);
     }
   }
-} 
+}
