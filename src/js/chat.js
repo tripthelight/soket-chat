@@ -35,7 +35,6 @@ function send() {
 }
 
 socket.on('chatting', (data) => {
-  console.log(data);
   const { name, msg, time } = data;
   const item = new Limodel(name, msg, time);
   item.makeLi();
