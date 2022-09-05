@@ -8,9 +8,7 @@ const chatInput = document.querySelector('#chatting-input');
 const sendButton = document.querySelector('.send-button');
 const displayContainer = document.querySelector('.display-container');
 
-window.addEventListener('DOMContentLoaded', function(event) {
-  loadLiCheck();
-});
+window.addEventListener('DOMContentLoaded', loadLiCheck);
 
 chatInput.addEventListener('keypress', function(event) {
   if (event.keyCode === 13) {
