@@ -60,7 +60,7 @@ function Limodel(name, msg, time) {
     let dom = '';
     dom += '<span class="profile">';
     dom += '<span class="user">' + this.name + '</span>';
-    dom += '<img src="https://placeimg.com/50/50/any" alt="profile" class="image" />';
+    dom += '<img src="https://placeimg.com/50/50/any' + "?nocache=" + Math.random() + '" alt="profile" class="image" />';
     dom += '</span>';
     dom += '<span class="message">' + this.msg + '</span>';
     dom += '<span class="time">' + this.time + '</span>';
