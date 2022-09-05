@@ -50,6 +50,8 @@ function Limodel(name, msg, time) {
   this.time = time;
 
   this.makeLi = function () {
+    liCheck();
+
     const li = document.createElement('li');
     li.classList.add(nickname.value === this.name ? 'sent' : 'received');
 
@@ -61,7 +63,16 @@ function Limodel(name, msg, time) {
     dom += '<span class="message">' + this.msg + '</span>';
     dom += '<span class="time">' + this.time + '</span>';
     li.innerHTML = dom;
+
     chatList.appendChild(li);
   }
 }
 
+function liCheck() {
+  let liElem = document.querySelectorAll('li');
+  if (liElem.length > 100) {
+    for (let i = 0; i < liElem.length; i++) {
+      liElem[0].remove();
+    }
+  }
+} 
