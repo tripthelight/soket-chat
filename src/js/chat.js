@@ -8,7 +8,7 @@ const chatInput = document.querySelector('#chatting-input');
 const sendButton = document.querySelector('.send-button');
 const displayContainer = document.querySelector('.display-container');
 
-chatInput.addEventListener('keypress', (event) => {
+chatInput.addEventListener('keypress', function(event) {
   if (event.keyCode === 13) {
     send();
     chatInput.value = '';
@@ -34,11 +34,14 @@ function send() {
   }
 }
 
-socket.on('chatting', (data) => {
-  const { name, msg, time } = data;
+socket.on('chatting', function (data) {
+  // const { name, msg, time } = data;
+  const name = data.name;
+  const msg = data.msg;
+  const time = data.time;
   const item = new Limodel(name, msg, time);
   item.makeLi();
-  displayContainer.scrollTo(0, displayContainer.scrollHeight);
+  displayContainer.scrollTop = displayContainer.scrollHeight;
 });
 
 function Limodel(name, msg, time) {
@@ -46,17 +49,24 @@ function Limodel(name, msg, time) {
   this.msg = msg;
   this.time = time;
 
-  this.makeLi = () => {
+  this.makeLi = function () {
     const li = document.createElement('li');
     li.classList.add(nickname.value === this.name ? 'sent' : 'received');
-    const dom = `
-    <span class="profile">
-      <span class="user">${this.name}</span>
-      <img src="https://placeimg.com/50/50/any" alt="profile" class="image" />
-    </span>
-    <span class="message">${this.msg}</span>
-    <span class="time">${this.time}</span>
-    `;
+    // const dom = `
+    // <span class="profile">
+    //   <span class="user">${this.name}</span>
+    //   <img src="https://placeimg.com/50/50/any" alt="profile" class="image" />
+    // </span>
+    // <span class="message">${this.msg}</span>
+    // <span class="time">${this.time}</span>
+    // `;
+    let dom = '';
+    dom += '<span class="profile">';
+    dom += '<span class="user">' + this.name + '</span>';
+    dom += '<img src="https://placeimg.com/50/50/any" alt="profile" class="image" />';
+    dom += '</span>';
+    dom += '<span class="message">' + this.msg + '</span>';
+    dom += '<span class="time">' + this.time + '</span>';
     li.innerHTML = dom;
     chatList.appendChild(li);
   }

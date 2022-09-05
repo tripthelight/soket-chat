@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname, 'src')));
 
-io.on('connection', (socket) => {
-  socket.on('chatting', (data) => {
+io.on('connection', function(socket) {
+  socket.on('chatting', function(data) {
     const { name, msg } = data;
     io.emit('chatting', {
       name,
@@ -22,6 +22,6 @@ io.on('connection', (socket) => {
   })
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, function() {
   console.log(`server is running : ${PORT}`);
 });
