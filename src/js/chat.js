@@ -23,7 +23,15 @@ function send() {
     msg: chatInput.value
   }
 
-  socket.emit('chatting', param);
+  if (nickname.value == '') {
+    document.querySelector('#nickname').focus();
+    alert('닉네임을 입력해 주세요.')
+  } else if (chatInput.value == '') {
+    document.querySelector('#chatting-input').focus();
+    alert('아무말이나 입력해 주세요.');
+  } else {
+    socket.emit('chatting', param);
+  }
 }
 
 socket.on('chatting', (data) => {
@@ -45,7 +53,7 @@ function Limodel(name, msg, time) {
     const dom = `
     <span class="profile">
       <span class="user">${this.name}</span>
-      <img src="https://placeimg.com/50/50/any" alt="" class="image" />
+      <img src="https://placeimg.com/50/50/any" alt="profile" class="image" />
     </span>
     <span class="message">${this.msg}</span>
     <span class="time">${this.time}</span>
