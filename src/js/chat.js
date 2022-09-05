@@ -52,14 +52,7 @@ function Limodel(name, msg, time) {
   this.makeLi = function () {
     const li = document.createElement('li');
     li.classList.add(nickname.value === this.name ? 'sent' : 'received');
-    // const dom = `
-    // <span class="profile">
-    //   <span class="user">${this.name}</span>
-    //   <img src="https://placeimg.com/50/50/any" alt="profile" class="image" />
-    // </span>
-    // <span class="message">${this.msg}</span>
-    // <span class="time">${this.time}</span>
-    // `;
+
     let dom = '';
     dom += '<span class="profile">';
     dom += '<span class="user">' + this.name + '</span>';
@@ -71,3 +64,4 @@ function Limodel(name, msg, time) {
     chatList.appendChild(li);
   }
 }
+

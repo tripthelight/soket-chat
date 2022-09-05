@@ -19,15 +19,17 @@ ul, ol, li, dl, dt, dd {
 }
 .user-container {
   background-color: #a9bdce;
-  flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.5rem;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .user-container label {
-  font-size: 14px;
-  margin-right: 1rem;
+  font-size: 20px;
+  margin-right: 10px;
+  width: 70px
 }
 .user-container input[type="text"] {
   border-radius: 3px;
@@ -36,7 +38,7 @@ ul, ol, li, dl, dt, dd {
   padding: 16px;
   box-sizing: border-box;
   font-size: 26px;
-  flex: 1;
+  width: calc(100% - 80px);
 }
 
 .display-container {
@@ -46,34 +48,35 @@ ul, ol, li, dl, dt, dd {
 }
 
 .input-container {
-  flex: 1;
   display: flex;
   justify-content: stretch;
   align-items: stretch;
+  height: 83px;
 }
 .input-container span {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.3rem;
+  padding: 10px;
   width: 100%;
 }
 #chatting-input {
   font-size: 12px;
   height: 100%;
-  flex: 8;
   border: 0 none;
   padding: 16px;
   box-sizing: border-box;
   font-size: 26px;
+  width: calc(100% - 90px);
 }
 .send-button {
-  flex: 2;
   background-color: #ffeb33;
   border: 0 none;
   height: 100%;
   border-radius: 3px;
   margin-left: 10px;
+  font-size: 26px;
+  width: 90px;
 }
 
 .chatting-list li {
